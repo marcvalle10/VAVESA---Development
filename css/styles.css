@@ -1,0 +1,511 @@
+:root {
+    --navy: #0E3A5B;
+    /* azul logo */
+    --olive: #7D8F2E;
+    /* verde oliva logo */
+    --orange: #F39C12;
+    /* naranja logo */
+    --ink: #1f1f1f;
+    --muted: #6c757d;
+}
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: var(--ink);
+}
+
+.fw-800 {
+    font-weight: 800
+}
+
+
+/* ===== NAVBAR ===== */
+
+.navbar {
+    background: rgba(255, 255, 255, .72) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, .06);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, .06);
+    transition: box-shadow .25s ease, background .25s ease, border-color .25s ease;
+}
+
+.navbar.nav-scrolled {
+    background: rgba(255, 255, 255, .92) !important;
+    border-bottom-color: rgba(0, 0, 0, .08);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, .10);
+}
+
+.brand-logo {
+    display: inline-grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, .12), inset 0 0 0 1px rgba(0, 0, 0, .06);
+    position: relative;
+}
+
+.brand-logo::after {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: 14px;
+    background: linear-gradient(90deg, var(--orange), var(--olive));
+    opacity: .25;
+    z-index: -1;
+    filter: blur(6px);
+}
+
+.brand-logo img {
+    width: 78%;
+    height: 78%;
+    object-fit: contain;
+    display: block;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, .15))
+}
+
+.brand-text {
+    font-weight: 800;
+    letter-spacing: .4px;
+    font-size: clamp(1.05rem, .9vw + .6rem, 1.35rem);
+    color: var(--ink)
+}
+
+.navbar .nav-link {
+    color: #5a5f67;
+    font-weight: 600;
+    padding: .4rem .75rem;
+    border-radius: 10px;
+    position: relative;
+    transition: color .2s, background-color .2s, transform .12s;
+}
+
+.navbar .nav-link:hover {
+    color: var(--navy);
+    background: rgba(0, 0, 0, .05)
+}
+
+.navbar .nav-link.active,
+.navbar .nav-link:focus-visible {
+    color: var(--navy)
+}
+
+.navbar .nav-link::after {
+    content: "";
+    position: absolute;
+    left: .6rem;
+    right: .6rem;
+    bottom: .15rem;
+    height: 2px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--orange), var(--olive));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .18s ease-in-out;
+}
+
+.navbar .nav-link:hover::after,
+.navbar .nav-link.active::after {
+    transform: scaleX(1)
+}
+
+
+/* ===== HERO premium ===== */
+
+.hero {
+    background: radial-gradient(120% 90% at 50% 10%, rgba(255, 255, 255, .06) 0%, rgba(0, 0, 0, .65) 60%), linear-gradient(180deg, rgba(0, 0, 0, .35), rgba(0, 0, 0, .55)), url("../img/fondo-vavesa.png") center/cover no-repeat;
+    min-height: 78svh;
+    display: grid;
+    align-items: center;
+    padding: clamp(72px, 8vw, 110px) 0;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, .28);
+    background-attachment: fixed;
+}
+
+@media (max-width:991.98px) {
+    .hero {
+        background-attachment: scroll
+    }
+}
+
+.place-items-center {
+    place-items: center
+}
+
+
+/* Panel translúcido con marca de agua */
+
+.glass {
+    position: relative;
+    overflow: hidden;
+    background: rgba(255, 255, 255, .08);
+    border: 1px solid rgba(255, 255, 255, .20);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.glass::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("../img/Image.png") center/cover no-repeat;
+    opacity: .22;
+    filter: brightness(1.1) contrast(1.1);
+    z-index: 0;
+    transition: transform 25s ease-in-out;
+}
+
+.glass:hover::before {
+    transform: scale(1.05)
+}
+
+.glass>* {
+    position: relative;
+    z-index: 1
+}
+
+.hero-title {
+    font-weight: 800;
+    font-size: clamp(2.2rem, 3.5vw + .6rem, 4.25rem);
+    letter-spacing: .2px;
+    margin: 0
+}
+
+.hero-subtitle {
+    font-size: clamp(1rem, .9vw + .6rem, 1.45rem);
+    color: rgba(255, 255, 255, .85)
+}
+
+.mark {
+    background: linear-gradient(90deg, var(--orange), var(--olive));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent
+}
+
+.hero-divider {
+    width: 120px;
+    height: 4px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--orange), var(--olive))
+}
+
+.btn-hero {
+    border-radius: 999px;
+    padding: .6rem 1rem;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .15)
+}
+
+.btn-hero:hover {
+    transform: translateY(-1px)
+}
+
+.btn-accent {
+    --bs-btn-bg: linear-gradient(90deg, var(--orange), var(--olive));
+    --bs-btn-hover-bg: linear-gradient(90deg, var(--olive), var(--orange));
+    --bs-btn-color: #fff;
+    --bs-btn-hover-color: #fff;
+    border: 0;
+}
+
+.btn-outline-accent {
+    color: #0E3A5B;
+    border-color: #7D8F2E;
+    border-width: 1.5px;
+    border-radius: 16px;
+    padding: .7rem 1.1rem;
+    font-weight: 700;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .06);
+}
+
+.btn-outline-accent:hover {
+    color: #fff;
+    border-color: transparent;
+    background: linear-gradient(90deg, #7D8F2E, #F39C12);
+    transform: translateY(-1px);
+}
+
+
+/* Chips de fecha/lugar */
+
+.chips {
+    display: flex;
+    gap: .6rem;
+    justify-content: center;
+    flex-wrap: wrap
+}
+
+.chip {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    padding: .45rem .8rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .12);
+    border: 1px solid rgba(255, 255, 255, .25);
+    color: #fff;
+    font-weight: 600;
+    font-size: .95rem;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .08);
+}
+
+
+/* Animaciones sutiles */
+
+.hero-content {
+    animation: fadeUp .8s ease-out both
+}
+
+.chips {
+    animation: fadeUp 1s ease-out both .16s
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(12px)
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+
+/* ===== Secciones generales ===== */
+
+.container {
+    max-width: 1120px
+}
+
+section[id] {
+    scroll-margin-top: 88px
+}
+
+
+/* anclas bajo el navbar */
+
+.section-title {
+    font-weight: 800;
+    letter-spacing: .2px;
+    text-align: center;
+    margin-bottom: .25rem
+}
+
+.section-sub {
+    text-align: center;
+    color: #6c757d;
+    margin-bottom: 2rem
+}
+
+.section-divider {
+    width: 120px;
+    height: 4px;
+    margin: .5rem auto 2rem;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--orange), var(--olive))
+}
+
+
+/* Invitación */
+
+#invitacion .lead {
+    font-size: clamp(1rem, .9vw + .65rem, 1.25rem)
+}
+
+.list-vavesa {
+    margin: 1rem 0 1.5rem;
+    padding-left: 1.1rem
+}
+
+.list-vavesa li {
+    margin: .35rem 0;
+    font-size: 1.05rem
+}
+
+.list-vavesa li::marker {
+    color: var(--navy)
+}
+
+
+/* Tarjeta de imagen */
+
+.card.border-0 {
+    border-radius: 18px !important
+}
+
+.card.border-0 img {
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    object-fit: cover
+}
+
+
+/* Contador */
+
+#contador {
+    background: #f6f7f8
+}
+
+.countdown .cd-box {
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, .06);
+    border-radius: 16px;
+    min-width: 140px;
+    padding: 18px 20px;
+    text-align: center;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, .07);
+}
+
+.countdown .cd-box span {
+    color: var(--navy);
+    font-weight: 800;
+    font-size: 40px
+}
+
+.countdown .cd-box small {
+    color: #6c757d;
+    font-weight: 600
+}
+
+
+/* RSVP */
+
+#rsvp .form-control,
+#rsvp .form-select {
+    border-radius: 14px;
+    border: 1px solid rgba(0, 0, 0, .12);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, .04);
+}
+
+#rsvp .form-control:focus,
+#rsvp .form-select:focus {
+    border-color: #7D8F2E;
+    box-shadow: 0 0 0 .2rem rgba(125, 143, 46, .18);
+}
+
+.form-check-input:checked {
+    background-color: #7D8F2E;
+    border-color: #7D8F2E
+}
+
+#rsvp .btn-accent {
+    border-radius: 16px;
+    padding: .8rem 1.2rem;
+    font-weight: 800
+}
+
+#rsvp .btn-outline-secondary {
+    border-radius: 16px
+}
+
+
+/* Misión & Visión */
+
+.mv-card {
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, .06);
+    border-radius: 18px;
+    padding: 20px 22px 18px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, .07);
+}
+
+.mv-card h3 {
+    font-weight: 800
+}
+
+
+/* Footer */
+
+footer {
+    background: #f6f7f8;
+    color: #6c757d
+}
+
+footer .container {
+    max-width: 920px
+}
+
+footer a {
+    color: #6c757d
+}
+
+footer a:hover {
+    color: var(--navy)
+}
+
+
+/* Confeti y utilidades */
+
+.confetti-canvas {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1089
+}
+
+:focus-visible {
+    outline: 3px solid var(--orange);
+    outline-offset: 2px
+}
+
+.shadow-soft {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, .08)
+}
+
+.round-16 {
+    border-radius: 16px
+}
+
+
+/* Modal mapa */
+
+.modal-content {
+    border-radius: 18px;
+    overflow: hidden;
+    background: #fdfdfd
+}
+
+.modal-header h5 {
+    color: var(--navy)
+}
+
+.modal-body iframe {
+    border-radius: 0 0 18px 18px
+}
+
+
+/* Botón de música */
+
+#btnPlay {
+    border-radius: 16px;
+    font-weight: 700
+}
+
+
+/* Pulso sutil al hacer click en "Ver ubicación" */
+
+@keyframes pulseAccent {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(125, 143, 46, .45);
+    }
+    70% {
+        transform: scale(.985);
+        box-shadow: 0 0 0 12px rgba(125, 143, 46, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(125, 143, 46, 0);
+    }
+}
+
+#btnUbicacion.active {
+    animation: pulseAccent .35s ease-out;
+}

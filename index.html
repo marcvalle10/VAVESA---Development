@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>VAVESA | Apertura de Local</title>
+
+    <!-- Favicon (logo) -->
+    <link rel="icon" href="img/Imagen1.png" type="image/png" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Estilos propios -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand brand d-flex align-items-center gap-2" href="#top">
+                <span class="brand-logo">
+                    <img src="img/imagen1.png" alt="VAVESA" />
+                </span>
+                <span class="brand-text">VAVESA</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+            <div id="nav" class="collapse navbar-collapse">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#invitacion">Invitación</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contador">Cuenta regresiva</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#rsvp">Confirmación</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#misionvision">Misión & Visión</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero text-light">
+        <div class="container d-grid place-items-center">
+            <div class="hero-content glass rounded-4 p-4 p-md-5 text-center shadow-lg">
+                <h1 class="hero-title mb-2">Apertura de <span class="mark">VAVESA</span></h1>
+                <div class="hero-divider mx-auto mb-3" aria-hidden="true"></div>
+                <p class="hero-subtitle mb-4">
+                    Desarrollo de software con excelencia técnica y enfoque humano.
+                </p>
+
+                <div class="d-flex gap-2 justify-content-center">
+                    <audio id="bgm" src="audio/Future_-_Puffin_on_Zooties_(mp3.pm).mp3" preload="auto"></audio>
+                    <button id="btnPlay" onclick="shootConfetti()" class="btn btn-outline-light px-3">▶️ Reproducir música</button>
+                    <button id="btnUbicacion" class="btn btn-accent px-3" data-bs-toggle="modal" data-bs-target="#mapModal">Ver ubicación</button>
+                </div>
+
+                <div class="chips mt-4">
+                    <span class="chip">Sábado 30 de noviembre 2025 — 18:00 h</span>
+                    <span class="chip">Hermosillo, Son.</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Modal Ubicación -->
+    <div class="modal fade" id="mapModal" tabindex="-1" aria-labelledby="mapModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title fw-bold" id="mapModalLabel">Ubicación — VAVESA Software Development</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d871.7040534887961!2d-110.96365568825236!3d29.081575402401786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86ce8446299a65fd%3A0x7c95e1a04c0a2f21!2sCentro%20de%20Servicios%20de%20Tecnolog%C3%ADas%20de%20la%20Informaci%C3%B3n%20de%20la%20Universidad%20de%20Sonora%20(CSTI)!5e0!3m2!1ses-419!2smx!4v1762842416261!5m2!1ses-419!2smx"
+                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+                </div>
+                <div class="modal-footer border-0 pt-0">
+                    <a href="https://www.google.com/maps?q=Centro+de+Servicios+de+Tecnolog%C3%ADas+de+la+Informaci%C3%B3n+UNISON" target="_blank" class="btn btn-accent">
+          Abrir en Google Maps
+        </a>
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- INVITACIÓN -->
+    <section id="invitacion" class="py-5">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="section-title">Estás invitad@</h2>
+                    <p class="mb-3">
+                        Nos complace invitarte a la <strong>apertura oficial de VAVESA – Software Development</strong>. Acompáñanos a celebrar el inicio de un espacio creado para transformar ideas en soluciones tecnológicas de alto impacto.
+                    </p>
+                    <ul class="list-vavesa mb-4">
+                        <li>• Presentación del equipo y del local</li>
+                        <li>• <strong>Promociones de apertura</strong> y sorpresas</li>
+                        <li>• Networking con café de cortesía</li>
+                    </ul>
+                    <a href="#rsvp" class="btn btn-outline-accent">Confirmar asistencia</a>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card border-0 shadow-sm">
+                        <img src="img/Imagen2.png" class="card-img-top" alt="Organigrama VAVESA" loading="lazy">
+                        <div class="card-body">
+                            <p class="card-text small text-muted mb-0">
+                                Equipo VAVESA — dirección, desarrollo, soporte y atención al cliente.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTADOR -->
+    <section id="contador" class="py-5 bg-body-tertiary">
+        <div class="container text-center">
+            <h2 class="section-title mb-4">Faltan</h2>
+            <div class="countdown d-flex justify-content-center gap-3 flex-wrap">
+                <div class="cd-box shadow-soft"><span id="days">00</span><small>Días</small></div>
+                <div class="cd-box shadow-soft"><span id="hours">00</span><small>Horas</small></div>
+                <div class="cd-box shadow-soft"><span id="minutes">00</span><small>Min</small></div>
+                <div class="cd-box shadow-soft"><span id="seconds">00</span><small>Seg</small></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP -->
+    <section id="rsvp" class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h2 class="section-title text-center mb-4">Confirmación de asistencia</h2>
+
+                    <form id="rsvpForm" class="needs-validation" novalidate>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Nombre completo</label>
+                                <input type="text" class="form-control" name="nombre" required maxlength="80" />
+                                <div class="invalid-feedback">Escribe tu nombre.</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Correo electrónico</label>
+                                <input type="email" class="form-control" name="correo" required />
+                                <div class="invalid-feedback">Ingresa un correo válido.</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Teléfono (opcional)</label>
+                                <input type="tel" class="form-control" name="telefono" pattern="[0-9 +()-]{8,}" />
+                                <div class="invalid-feedback">Verifica el formato.</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">¿Cuántas personas?</label>
+                                <select class="form-select" name="personas" required>
+                  <option value="" selected disabled>Selecciona...</option>
+                  <option>1</option><option>2</option><option>3</option><option>4</option>
+                </select>
+                                <div class="invalid-feedback">Selecciona una opción.</div>
+                            </div>
+                        </div>
+
+                        <div class="form-check mt-3">
+                            <input class="form-check-input" type="checkbox" id="acepto" required>
+                            <label class="form-check-label" for="acepto">
+                Acepto que mis datos se utilicen para confirmar mi asistencia.
+              </label>
+                            <div class="invalid-feedback">Debes aceptar para continuar.</div>
+                        </div>
+
+                        <div class="d-grid d-sm-flex gap-2 mt-4">
+                            <button class="btn btn-accent btn-lg" type="submit">Confirmar asistencia</button>
+                            <button class="btn btn-outline-secondary btn-lg" type="reset">Limpiar</button>
+                        </div>
+                    </form>
+
+                    <!-- Toast -->
+                    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1090">
+                        <div id="toastOk" class="toast align-items-center text-bg-dark border-0" role="alert" aria-live="assertive" aria-atomic="true">
+                            <div class="d-flex">
+                                <div class="toast-body">
+                                    ✅ ¡Gracias por confirmar! Te esperamos en la apertura de VAVESA.
+                                </div>
+                                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lienzo para confeti -->
+                    <canvas id="confetti" class="confetti-canvas"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MISIÓN & VISIÓN -->
+    <section id="misionvision" class="py-5 bg-body-tertiary">
+        <div class="container">
+            <h2 class="section-title text-center mb-4">Misión & Visión</h2>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="mv-card h-100">
+                        <h3 class="h5 fw-800 mb-2">Misión</h3>
+                        <p class="mb-0">
+                            En VAVESA, nuestra misión es transformar ideas innovadoras en soluciones de software de alta calidad que impulsen el crecimiento y la eficiencia de nuestros clientes. Nos comprometemos a ofrecer productos y servicios tecnológicos que superen las expectativas
+                            mediante la excelencia técnica, la creatividad y la colaboración continua.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="mv-card h-100">
+                        <h3 class="h5 fw-800 mb-2">Visión</h3>
+                        <p class="mb-0">
+                            Nuestra visión es ser reconocidos como líderes en el desarrollo de software, revolucionando la industria con tecnologías disruptivas y servicios excepcionales. Aspiramos a crear un futuro donde nuestras soluciones tecnológicas mejoren la vida de las personas
+                            y potencien el éxito de las empresas en el estado.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-4 text-center small">
+        <div class="container">
+            <div class="mb-2 opacity-75">© 2025 VAVESA — Software Development</div>
+            <div class="opacity-75">
+                Créditos del equipo: <strong>Vallejo Leyva Marcos</strong> • <strong>Ana Cecilia Casas Gastelum</strong><br>
+                <span>Grupo: 1-Diseño Front-End • Fecha: 11/11/2025</span>
+            </div>
+            <div class="mt-1"><a href="#top" class="link-secondary text-decoration-none">Volver arriba ↑</a></div>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap JS + app -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="scripts/app.js"></script>
+</body>
+
+</html>
