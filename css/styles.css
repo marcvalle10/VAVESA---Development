@@ -116,10 +116,10 @@ body {
 }
 
 
-/* ===== HERO premium ===== */
+/* ===== HERO SECTION ===== */
 
 .hero {
-    background: radial-gradient(120% 90% at 50% 10%, rgba(255, 255, 255, .06) 0%, rgba(0, 0, 0, .65) 60%), linear-gradient(180deg, rgba(0, 0, 0, .35), rgba(0, 0, 0, .55)), url("../img/ima.png") center/cover no-repeat;
+    background: radial-gradient(120% 90% at 50% 10%, rgba(255, 255, 255, .06) 0%, rgba(0, 0, 0, .65) 60%), linear-gradient(180deg, rgba(0, 0, 0, .35), rgba(0, 0, 0, .55)), url("../img/Imag.png") center/cover no-repeat;
     min-height: 78svh;
     display: grid;
     align-items: center;
